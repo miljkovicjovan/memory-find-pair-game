@@ -1,16 +1,9 @@
-# flutter_complete_guide
+# Memory Tile Pair Game
 
-A new Flutter project.
+This project is personal and it is my first one on flutter.
 
-## Getting Started
+I am aiming to make a memory game.
 
-This project is a starting point for a Flutter application.
+The game is simple. You are shown some tiles and you have to memorize the icons on them. Once you are ready the tiles are turned over (you can't see the icons anymore) and you have to tap on tiles that had the same icon and find the pairings.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The game is over when all the pairs have been found or when the user quits :(
