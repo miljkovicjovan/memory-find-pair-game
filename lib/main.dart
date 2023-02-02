@@ -3,30 +3,55 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  void answerQuestion() {
-    print('Answer taken!');
-  }
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      'What\'s your favorite colour?',
-      'What\'s your favorite pet?'
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Memory Game'),
+          title: const Text('Memory Game'),
         ),
-        body: Column(
-          children: [
-            Text('The question!'),
-            ElevatedButton(child: Text('Answer 1'), onPressed: answerQuestion),
-            ElevatedButton(child: Text('Answer 1'), onPressed: answerQuestion),
-            ElevatedButton(child: Text('Answer 1'), onPressed: answerQuestion),
-          ],
-        ),
+        body: _Grid(),
       ),
+    );
+  }
+}
+
+class _Tile extends StatelessWidget {
+  final String source;
+
+  const _Tile({Key? key, required this.source}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 100,
+      width: 100,
+      child: ElevatedButton(
+          onPressed: null, child: Image(image: AssetImage(source))),
+    );
+  }
+}
+
+class _Grid extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 3,
+      children: const [
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+        _Tile(source: 'assets/clown-fish.png'),
+      ],
     );
   }
 }
