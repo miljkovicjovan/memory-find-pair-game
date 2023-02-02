@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(MyApp());
 
@@ -36,24 +37,40 @@ class _Tile extends StatelessWidget {
 }
 
 class _Grid extends StatelessWidget {
+  var images = [
+    [1, 'assets/clown-fish.png'],
+    [2, 'assets/lion.png'],
+    [3, 'assets/crocodile.png'],
+    [4, 'assets/monkey.png'],
+    [5, 'assets/parrot.png'],
+    [6, 'assets/horse.png'],
+    [7, 'assets/clown-fish.png'],
+    [8, 'assets/lion.png'],
+    [9, 'assets/crocodile.png'],
+    [10, 'assets/monkey.png'],
+    [11, 'assets/parrot.png'],
+    [12, 'assets/horse.png']
+  ];
+
   @override
   Widget build(BuildContext context) {
+    images.shuffle();
     return GridView.count(
       crossAxisCount: 3,
       padding: const EdgeInsets.all(20),
-      children: const [
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
-        _Tile(source: 'assets/clown-fish.png'),
+      children: [
+        _Tile(source: images[0][1] as String),
+        _Tile(source: images[1][1] as String),
+        _Tile(source: images[2][1] as String),
+        _Tile(source: images[3][1] as String),
+        _Tile(source: images[4][1] as String),
+        _Tile(source: images[5][1] as String),
+        _Tile(source: images[6][1] as String),
+        _Tile(source: images[7][1] as String),
+        _Tile(source: images[8][1] as String),
+        _Tile(source: images[9][1] as String),
+        _Tile(source: images[10][1] as String),
+        _Tile(source: images[11][1] as String),
       ],
     );
   }
